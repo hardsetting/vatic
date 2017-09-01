@@ -12,7 +12,7 @@ function ui_build(job)
     ui_setupslider(player);
     ui_setupsubmit(job, tracks);
     ui_setupclickskip(job, player, tracks, objectui);
-    ui_setupkeyboardshortcuts(job, player);
+    ui_setupkeyboardshortcuts(job, player, objectui);
     ui_loadprevious(job, objectui);
 
     $("#newobjectbutton").click(function() {
@@ -253,8 +253,28 @@ function ui_setupbuttons(job, player, tracks)
     });
 }
 
-function ui_setupkeyboardshortcuts(job, player)
+function ui_setupkeyboardshortcuts(job, player, objectui)
 {
+    $(window).keydown(function(e) {
+
+        var keyCode = e.keyCode ? e.keyCode : e.which;
+
+        if (keyCode == 37) {
+            objectui.currTrack.moveLeft();
+            console.log('moveleft');
+        } else if (keyCode == 38) {
+            console.log('moveup');
+            //objectui.currTrack.moveUp();
+        } else if (keyCode == 39) {
+            //objectui.currTrack.moveRight();
+            console.log('moveright');
+        } else if (keyCode == 40) {
+            //objectui.currTrack.moveDown();
+            console.log('movedown');
+        }
+
+    });
+
     $(window).keypress(function(e) {
         console.log("Key press: " + e.keyCode);
 

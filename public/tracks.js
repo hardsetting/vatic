@@ -478,8 +478,8 @@ function Track(player, color, position)
             height = 1;
         }
 
-        var xtl = pos.left - offset.left;
-        var ytl = pos.top - offset.top;
+        var xtl = pos.left - offset.left + 1;
+        var ytl = pos.top - offset.top + 1;
         var xbr = xtl + width + this.htmloffset;
         var ybr = ytl + height + this.htmloffset;
 
@@ -690,6 +690,30 @@ function Track(player, color, position)
             this.handle.removeClass("boundingboxlocked");
         }
     }
+
+    this.moveLeft = function() {
+        var pos = me.pollposition();
+        pos.xtl -= 1;
+        pos.xbr -= 1;
+        me.draw(me.player.frame, pos);
+
+        me.recordposition();
+        me.notifyupdate();
+        eventlog("resizable", "Resize a box");
+    };
+
+
+    this.moveRight = function() {
+        var pos = me.pollposition();
+        pos.xtl += 1;
+        pos.xbr += 1;
+        me.draw(me.player.frame, pos);
+
+        me.recordposition();
+        me.notifyupdate();
+        eventlog("resizable", "Resize a box");
+    }
+
 
     /*
      * Draws the current box on the screen. 

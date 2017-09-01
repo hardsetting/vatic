@@ -239,6 +239,7 @@ function TrackObject(job, player, container, color)
     {
         this.id = id;
         this.track = track;
+        this.track = track;
         this.tracks = tracks;
 
         this.track.onmouseover.push(function() {
