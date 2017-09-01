@@ -693,8 +693,7 @@ function Track(player, color, position)
 
     this.moveLeft = function() {
         var pos = me.pollposition();
-        pos.xtl -= 1;
-        pos.xbr -= 1;
+        pos = new Position(pos.xtl-1, pos.ytl, pos.xbr-1, pos.ybr, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
         me.recordposition();
@@ -703,8 +702,7 @@ function Track(player, color, position)
     };
     this.moveRight = function() {
         var pos = me.pollposition();
-        pos.xtl += 1;
-        pos.xbr += 1;
+        pos = new Position(pos.xtl+1, pos.ytl, pos.xbr+1, pos.ybr, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
         me.recordposition();
@@ -713,8 +711,7 @@ function Track(player, color, position)
     };
     this.moveUp = function() {
         var pos = me.pollposition();
-        pos.ytl -= 1;
-        pos.ybr -= 1;
+        pos = new Position(pos.xtl, pos.ytl-1, pos.xbr, pos.ybr-1, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
         me.recordposition();
@@ -723,8 +720,7 @@ function Track(player, color, position)
     };
     this.moveDown = function() {
         var pos = me.pollposition();
-        pos.ytl += 1;
-        pos.ybr += 1;
+        pos = new Position(pos.xtl, pos.ytl+1, pos.xbr, pos.ybr+1, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
         me.recordposition();
@@ -735,7 +731,7 @@ function Track(player, color, position)
 
     this.moveTLLeft = function() {
         var pos = me.pollposition();
-        pos.xtl -= 1;
+        pos = new Position(pos.xtl-1, pos.ytl, pos.xbr, pos.ybr, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
         me.recordposition();
@@ -744,7 +740,7 @@ function Track(player, color, position)
     };
     this.moveTLRight = function() {
         var pos = me.pollposition();
-        pos.xtl += 1;
+        pos = new Position(pos.xtl+1, pos.ytl, pos.xbr, pos.ybr, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
         me.recordposition();
@@ -753,7 +749,7 @@ function Track(player, color, position)
     };
     this.moveTLUp = function() {
         var pos = me.pollposition();
-        pos.ytl -= 1;
+        pos = new Position(pos.xtl, pos.ytl-1, pos.xbr, pos.ybr, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
         me.recordposition();
@@ -762,7 +758,7 @@ function Track(player, color, position)
     };
     this.moveTLDown = function() {
         var pos = me.pollposition();
-        pos.ytl += 1;
+        pos = new Position(pos.xtl, pos.ytl+1, pos.xbr, pos.ybr, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
         me.recordposition();
@@ -773,7 +769,7 @@ function Track(player, color, position)
 
     this.moveBRLeft = function() {
         var pos = me.pollposition();
-        pos.xbr -= 1;
+        pos = new Position(pos.xtl, pos.ytl, pos.xbr-1, pos.ybr, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
         me.recordposition();
@@ -782,7 +778,7 @@ function Track(player, color, position)
     };
     this.moveBRRight = function() {
         var pos = me.pollposition();
-        pos.xbr += 1;
+        pos = new Position(pos.xtl, pos.ytl, pos.xbr+1, pos.ybr, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
         me.recordposition();
@@ -791,7 +787,7 @@ function Track(player, color, position)
     };
     this.moveBRUp = function() {
         var pos = me.pollposition();
-        pos.ybr -= 1;
+        pos = new Position(pos.xtl, pos.ytl, pos.xbr, pos.ybr-1, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
         me.recordposition();
@@ -800,6 +796,7 @@ function Track(player, color, position)
     };
     this.moveBRDown = function() {
         var pos = me.pollposition();
+        pos = new Position(pos.xtl, pos.ytl, pos.xbr, pos.ybr-1, pos.occluded, pos.outside);
         pos.ybr += 1;
         me.draw(me.player.frame, pos);
 
