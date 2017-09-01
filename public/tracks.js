@@ -6,7 +6,7 @@ function BoxDrawer(container)
     var me = this;
 
     this.onstartdraw = [];
-    this.onstopdraw = []
+    this.onstopdraw = [];
 
     this.enabled = false;
     this.drawing = false;
@@ -702,7 +702,6 @@ function Track(player, color, position)
         eventlog("resizable", "Resize a box");
     };
 
-
     this.moveRight = function() {
         var pos = me.pollposition();
         pos.xtl += 1;
@@ -712,7 +711,29 @@ function Track(player, color, position)
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
-    }
+    };
+
+    this.moveUp = function() {
+        var pos = me.pollposition();
+        pos.ytl -= 1;
+        pos.ybr -= 1;
+        me.draw(me.player.frame, pos);
+
+        me.recordposition();
+        me.notifyupdate();
+        eventlog("resizable", "Resize a box");
+    };
+
+    this.moveDown = function() {
+        var pos = me.pollposition();
+        pos.ytl += 1;
+        pos.ybr += 1;
+        me.draw(me.player.frame, pos);
+
+        me.recordposition();
+        me.notifyupdate();
+        eventlog("resizable", "Resize a box");
+    };
 
 
     /*

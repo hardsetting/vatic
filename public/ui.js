@@ -262,16 +262,12 @@ function ui_setupkeyboardshortcuts(job, player, objectui)
         if (objectui.currentobject) {
             if (keyCode == 37) {
                 objectui.currentobject.track.moveLeft();
-                console.log('moveleft');
             } else if (keyCode == 38) {
-                console.log('moveup');
-                //objectui.currTrack.moveUp();
+                objectui.currentobject.track.moveUp();
             } else if (keyCode == 39) {
                 objectui.currentobject.track.moveRight();
-                console.log('moveright');
             } else if (keyCode == 40) {
-                //objectui.currTrack.moveDown();
-                console.log('movedown');
+                objectui.currentobject.track.moveDown();
             }
         }
 

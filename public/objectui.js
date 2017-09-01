@@ -276,6 +276,10 @@ function TrackObject(job, player, container, color)
             me.toggletooltip();
         });
 
+        this.track.oninteract.push(function() {
+            me.click();
+        });
+
         this.track.onupdate.push(function() {
             me.hidetooltip();
             eventlog("interact", "Interact with box " + me.id);
