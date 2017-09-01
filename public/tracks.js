@@ -796,8 +796,7 @@ function Track(player, color, position)
     };
     this.moveBRDown = function() {
         var pos = me.pollposition();
-        pos = new Position(pos.xtl, pos.ytl, pos.xbr, pos.ybr-1, pos.occluded, pos.outside);
-        pos.ybr += 1;
+        pos = new Position(pos.xtl, pos.ytl, pos.xbr, pos.ybr+1, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
         me.recordposition();
