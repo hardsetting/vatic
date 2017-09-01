@@ -459,8 +459,8 @@ function Track(player, color, position)
         this.handle.show();
 
         var pos = this.handle.position();
-        var width = this.handle.width() + 1;
-        var height = this.handle.height() + 1;
+        var width = this.handle.width();
+        var height = this.handle.height();
         var offset = this.player.handle.offset();
 
         if (hidden)
