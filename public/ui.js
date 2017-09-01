@@ -255,24 +255,48 @@ function ui_setupbuttons(job, player, tracks)
 
 function ui_setupkeyboardshortcuts(job, player, objectui)
 {
+
     $(window).keydown(function(e) {
 
         var keyCode = e.keyCode ? e.keyCode : e.which;
 
         if (objectui.currentobject) {
-            if (keyCode == 37) {
-                objectui.currentobject.track.moveLeft();
-            } else if (keyCode == 38) {
-                objectui.currentobject.track.moveUp();
-            } else if (keyCode == 39) {
-                objectui.currentobject.track.moveRight();
-            } else if (keyCode == 40) {
-                objectui.currentobject.track.moveDown();
+
+            if (e.shiftKey) {
+                if (keyCode == 37) {
+                    objectui.currentobject.track.moveTLLeft();
+                } else if (keyCode == 38) {
+                    objectui.currentobject.track.moveTLUp();
+                } else if (keyCode == 39) {
+                    objectui.currentobject.track.moveTLRight();
+                } else if (keyCode == 40) {
+                    objectui.currentobject.track.moveTLDown();
+                }
+            } else if (e.altKey) {
+                if (keyCode == 37) {
+                    objectui.currentobject.track.moveBRLeft();
+                } else if (keyCode == 38) {
+                    objectui.currentobject.track.moveBRUp();
+                } else if (keyCode == 39) {
+                    objectui.currentobject.track.moveBRRight();
+                } else if (keyCode == 40) {
+                    objectui.currentobject.track.moveBRDown();
+                }
+            } else {
+               if (keyCode == 37) {
+                    objectui.currentobject.track.moveLeft();
+                } else if (keyCode == 38) {
+                    objectui.currentobject.track.moveUp();
+                } else if (keyCode == 39) {
+                    objectui.currentobject.track.moveRight();
+                } else if (keyCode == 40) {
+                    objectui.currentobject.track.moveDown();
+                }
             }
         }
 
-
     });
+
 
     $(window).keypress(function(e) {
         console.log("Key press: " + e.keyCode);

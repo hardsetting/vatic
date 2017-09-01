@@ -701,7 +701,6 @@ function Track(player, color, position)
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
     };
-
     this.moveRight = function() {
         var pos = me.pollposition();
         pos.xtl += 1;
@@ -712,7 +711,6 @@ function Track(player, color, position)
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
     };
-
     this.moveUp = function() {
         var pos = me.pollposition();
         pos.ytl -= 1;
@@ -723,7 +721,6 @@ function Track(player, color, position)
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
     };
-
     this.moveDown = function() {
         var pos = me.pollposition();
         pos.ytl += 1;
@@ -735,6 +732,81 @@ function Track(player, color, position)
         eventlog("resizable", "Resize a box");
     };
 
+
+    this.moveTLLeft = function() {
+        var pos = me.pollposition();
+        pos.xtl -= 1;
+        me.draw(me.player.frame, pos);
+
+        me.recordposition();
+        me.notifyupdate();
+        eventlog("resizable", "Resize a box");
+    };
+    this.moveTLRight = function() {
+        var pos = me.pollposition();
+        pos.xtl += 1;
+        me.draw(me.player.frame, pos);
+
+        me.recordposition();
+        me.notifyupdate();
+        eventlog("resizable", "Resize a box");
+    };
+    this.moveTLUp = function() {
+        var pos = me.pollposition();
+        pos.ytl -= 1;
+        me.draw(me.player.frame, pos);
+
+        me.recordposition();
+        me.notifyupdate();
+        eventlog("resizable", "Resize a box");
+    };
+    this.moveTLDown = function() {
+        var pos = me.pollposition();
+        pos.ytl += 1;
+        me.draw(me.player.frame, pos);
+
+        me.recordposition();
+        me.notifyupdate();
+        eventlog("resizable", "Resize a box");
+    };
+
+
+    this.moveBRLeft = function() {
+        var pos = me.pollposition();
+        pos.xbr -= 1;
+        me.draw(me.player.frame, pos);
+
+        me.recordposition();
+        me.notifyupdate();
+        eventlog("resizable", "Resize a box");
+    };
+    this.moveBRRight = function() {
+        var pos = me.pollposition();
+        pos.xbr += 1;
+        me.draw(me.player.frame, pos);
+
+        me.recordposition();
+        me.notifyupdate();
+        eventlog("resizable", "Resize a box");
+    };
+    this.moveBRUp = function() {
+        var pos = me.pollposition();
+        pos.ybr -= 1;
+        me.draw(me.player.frame, pos);
+
+        me.recordposition();
+        me.notifyupdate();
+        eventlog("resizable", "Resize a box");
+    };
+    this.moveBRDown = function() {
+        var pos = me.pollposition();
+        pos.ybr += 1;
+        me.draw(me.player.frame, pos);
+
+        me.recordposition();
+        me.notifyupdate();
+        eventlog("resizable", "Resize a box");
+    };
 
     /*
      * Draws the current box on the screen. 
