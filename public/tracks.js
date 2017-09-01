@@ -530,7 +530,7 @@ function Track(player, color, position)
         var xbr = Math.min(resizefix === true ? pos.xbr+1 : pos.xbr, width - 1);
         var ybr = Math.min(resizefix === true? pos.ybr+1 : pos.ybr, height - 1);
 
-        var fpos = new Position(xtl, ytl, xbr+1, ybr+1);
+        var fpos = new Position(xtl, ytl, xbr, ybr);
         fpos.occluded = pos.occluded;
         fpos.outside = pos.outside;
 
