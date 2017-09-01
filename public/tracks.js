@@ -502,7 +502,7 @@ function Track(player, color, position)
     /*
      * Fixes the position to force box to be inside frame.
      */
-    this.fixposition = function()
+    this.fixposition = function(resizefix)
     {
         var width = this.player.job.width;
         var height = this.player.job.height;
@@ -527,10 +527,10 @@ function Track(player, color, position)
 
         var xtl = Math.max(pos.xtl, 0);
         var ytl = Math.max(pos.ytl, 0); 
-        var xbr = Math.min(pos.xbr, width - 1);
-        var ybr = Math.min(pos.ybr, height - 1);
+        var xbr = Math.min(resizefix === true ? pos.xbr+1 : pos.xbr, width - 1);
+        var ybr = Math.min(resizefix === true? pos.ybr+1 : pos.ybr, height - 1);
 
-        var fpos = new Position(xtl, ytl, xbr, ybr);
+        var fpos = new Position(xtl, ytl, xbr+1, ybr+1);
         fpos.occluded = pos.occluded;
         fpos.outside = pos.outside;
 
@@ -747,7 +747,7 @@ function Track(player, color, position)
                     }
                 },
                 stop: function() {
-                    me.fixposition();
+                    me.fixposition(true);
                     me.recordposition();
                     me.notifyupdate();
                     eventlog("resizable", "Resize a box");

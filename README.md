@@ -5,6 +5,8 @@ Please note: the community is working on a modernized version in the [contrib](h
 
 
 
+
+
 VATIC is an online video annotation tool for computer vision research that
 crowdsources work to Amazon's Mechanical Turk. Our tool makes it easy to build
 massive, affordable video data sets. 
