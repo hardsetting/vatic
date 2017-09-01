@@ -60,7 +60,15 @@ function TrackObjectUI(button, container, videoframe, job, player, tracks)
         this.currentobject.onready.push(function() {
             me.stopnewobject();
         });
-        
+
+        var theobject = this.currentobject;
+        this.currentobject.onclick.push(function() {
+            if (me.currentobject !== theobject && me.currentobject.ready) {
+                me.currentobject = theobject;
+                console.log('clicked new object');
+            }
+        });
+
         this.currentobject.initialize(this.counter, track, this.tracks);
         this.currentobject.stateclassify();
     }
@@ -206,6 +214,7 @@ function TrackObject(job, player, container, color)
     this.tracks = null;
     this.label = null;
 
+    this.onclick = [];
     this.onready = [];
     this.onfolddown = [];
     this.onfoldup = [];
@@ -806,17 +815,8 @@ function TrackObject(job, player, container, color)
 
     this.click = function()
     {
-        return; // disable fold down
-        if (this.ready)
-        {
-            if (this.foldedup)
-            {
-                this.statefolddown();
-            }
-            else
-            {
-                this.statefoldup();
-            }
+        if (this.ready) {
+            this._callback(this.onclick);
         }
     }
 
