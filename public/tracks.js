@@ -459,8 +459,8 @@ function Track(player, color, position)
         this.handle.show();
 
         var pos = this.handle.position();
-        var width = this.handle.width();
-        var height = this.handle.height();
+        var width = this.handle.width() + 1;
+        var height = this.handle.height() + 1;
         var offset = this.player.handle.offset();
 
         if (hidden)
@@ -478,13 +478,13 @@ function Track(player, color, position)
             height = 1;
         }
 
-        var xtl = pos.left - offset.left + 1;
-        var ytl = pos.top - offset.top + 1;
+        var xtl = pos.left - offset.left;
+        var ytl = pos.top - offset.top ;
         var xbr = xtl + width + this.htmloffset;
         var ybr = ytl + height + this.htmloffset;
 
         var estimate = this.estimate(this.player.frame);
-        var position = new Position(xtl, ytl, xbr, ybr)
+        var position = new Position(xtl, ytl, xbr, ybr);
         position.occluded = estimate.occluded;
         position.outside = estimate.outside;
         return position;

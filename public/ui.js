@@ -260,7 +260,7 @@ function ui_setupkeyboardshortcuts(job, player, objectui)
         var keyCode = e.keyCode ? e.keyCode : e.which;
 
         if (keyCode == 37) {
-            objectui.currTrack.moveLeft();
+            //objectui.currTrack.moveLeft();
             console.log('moveleft');
         } else if (keyCode == 38) {
             console.log('moveup');
