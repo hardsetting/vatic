@@ -302,17 +302,17 @@ function ui_setupkeyboardshortcuts(job, player, objectui)
     $(window).keypress(function(e) {
         console.log("Key press: " + e.keyCode);
 
-        if (ui_disabled)
-        {
-            console.log("Key press ignored because UI is disabled.");
-            return;
-        }
-
         var keycode = e.keyCode ? e.keyCode : e.which;
         eventlog("keyboard", "Key press: " + keycode);
 
         if (keycode >= 49 && keycode <= 57) {
             moveStep = keycode - 48;
+        }
+
+        if (ui_disabled)
+        {
+            console.log("Key press ignored because UI is disabled.");
+            return;
         }
 
         if (keycode == 32 || keycode == 112 || keycode == 116 || keycode == 98)
