@@ -696,6 +696,7 @@ function Track(player, color, position)
         pos = new Position(pos.xtl-(v||1), pos.ytl, pos.xbr-(v||1), pos.ybr, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
+	me.fixposition();
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -705,6 +706,7 @@ function Track(player, color, position)
         pos = new Position(pos.xtl+(v||1), pos.ytl, pos.xbr+(v||1), pos.ybr, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
+	me.fixposition();
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -714,6 +716,7 @@ function Track(player, color, position)
         pos = new Position(pos.xtl, pos.ytl-(v||1), pos.xbr, pos.ybr-(v||1), pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
+	me.fixposition();
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -723,6 +726,7 @@ function Track(player, color, position)
         pos = new Position(pos.xtl, pos.ytl+(v||1), pos.xbr, pos.ybr+(v||1), pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
+	me.fixposition()
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -734,6 +738,7 @@ function Track(player, color, position)
         pos = new Position(pos.xtl-(v||1), pos.ytl, pos.xbr, pos.ybr, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
+	me.fixposition()
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -743,6 +748,7 @@ function Track(player, color, position)
         pos = new Position(pos.xtl+(v||1), pos.ytl, pos.xbr, pos.ybr, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
+	me.fixposition()
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -752,6 +758,7 @@ function Track(player, color, position)
         pos = new Position(pos.xtl, pos.ytl-(v||1), pos.xbr, pos.ybr, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
+	me.fixposition()
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -761,6 +768,7 @@ function Track(player, color, position)
         pos = new Position(pos.xtl, pos.ytl+(v||1), pos.xbr, pos.ybr, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
+	me.fixposition()
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -772,6 +780,7 @@ function Track(player, color, position)
         pos = new Position(pos.xtl, pos.ytl, pos.xbr-(v||1), pos.ybr, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
+	me.fixposition()
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -781,6 +790,7 @@ function Track(player, color, position)
         pos = new Position(pos.xtl, pos.ytl, pos.xbr+(v||1), pos.ybr, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
+	me.fixposition()
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -790,6 +800,7 @@ function Track(player, color, position)
         pos = new Position(pos.xtl, pos.ytl, pos.xbr, pos.ybr-(v||1), pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
+	me.fixposition()
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -799,6 +810,7 @@ function Track(player, color, position)
         pos = new Position(pos.xtl, pos.ytl, pos.xbr, pos.ybr+(v||1), pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
+	me.fixposition()
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
