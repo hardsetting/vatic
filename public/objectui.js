@@ -65,7 +65,6 @@ function TrackObjectUI(button, container, videoframe, job, player, tracks)
         this.currentobject.onclick.push(function() {
             if (me.currentobject !== theobject && me.currentobject.ready) {
                 me.currentobject = theobject;
-                console.log('clicked new object');
             }
         });
 
@@ -122,6 +121,13 @@ function TrackObjectUI(button, container, videoframe, job, player, tracks)
         {
             track.journal.mark(path[i][4], convert(path[i]));
         }
+
+        this.currentobject = obj;
+        this.currentobject.onclick.push(function() {
+            if (me.currentobject !== obj && me.currentobject.ready) {
+                me.currentobject = obj;
+            }
+        });
 
         obj.initialize(this.counter, track, this.tracks);
         obj.finalize(label);
