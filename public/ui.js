@@ -263,7 +263,7 @@ function ui_setupkeyboardshortcuts(job, player, objectui)
 
         if (objectui.currentobject) {
 
-            /*if (e.shiftKey) {
+            if (e.ctrlKey) {
                 if (keyCode == 37) {
                     objectui.currentobject.track.moveTLLeft(moveStep);
                 } else if (keyCode == 38) {
@@ -273,7 +273,7 @@ function ui_setupkeyboardshortcuts(job, player, objectui)
                 } else if (keyCode == 40) {
                     objectui.currentobject.track.moveTLDown(moveStep);
                 }
-            } else */if (e.shiftKey) {
+            } else if (e.shiftKey) {
                 if (keyCode == 37) {
                     objectui.currentobject.track.moveBRLeft(moveStep);
                 } else if (keyCode == 38) {
