@@ -691,74 +691,36 @@ function Track(player, color, position)
         }
     }
 
-    this.moveLeft = function() {
+    this.moveLeft = function(v) {
         var pos = me.pollposition();
-        pos = new Position(pos.xtl-1, pos.ytl, pos.xbr-1, pos.ybr, pos.occluded, pos.outside);
+        pos = new Position(pos.xtl-(v||1), pos.ytl, pos.xbr-(v||1), pos.ybr, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
     };
-    this.moveRight = function() {
+    this.moveRight = function(v) {
         var pos = me.pollposition();
-        pos = new Position(pos.xtl+1, pos.ytl, pos.xbr+1, pos.ybr, pos.occluded, pos.outside);
+        pos = new Position(pos.xtl+(v||1), pos.ytl, pos.xbr+(v||1), pos.ybr, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
     };
-    this.moveUp = function() {
+    this.moveUp = function(v) {
         var pos = me.pollposition();
-        pos = new Position(pos.xtl, pos.ytl-1, pos.xbr, pos.ybr-1, pos.occluded, pos.outside);
+        pos = new Position(pos.xtl, pos.ytl-(v||1), pos.xbr, pos.ybr-(v||1), pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
     };
-    this.moveDown = function() {
+    this.moveDown = function(v) {
         var pos = me.pollposition();
-        pos = new Position(pos.xtl, pos.ytl+1, pos.xbr, pos.ybr+1, pos.occluded, pos.outside);
-        me.draw(me.player.frame, pos);
-
-        me.recordposition();
-        me.notifyupdate();
-        eventlog("resizable", "Resize a box");
-    };
-
-
-    this.moveTLLeft = function() {
-        var pos = me.pollposition();
-        pos = new Position(pos.xtl-1, pos.ytl, pos.xbr, pos.ybr, pos.occluded, pos.outside);
-        me.draw(me.player.frame, pos);
-
-        me.recordposition();
-        me.notifyupdate();
-        eventlog("resizable", "Resize a box");
-    };
-    this.moveTLRight = function() {
-        var pos = me.pollposition();
-        pos = new Position(pos.xtl+1, pos.ytl, pos.xbr, pos.ybr, pos.occluded, pos.outside);
-        me.draw(me.player.frame, pos);
-
-        me.recordposition();
-        me.notifyupdate();
-        eventlog("resizable", "Resize a box");
-    };
-    this.moveTLUp = function() {
-        var pos = me.pollposition();
-        pos = new Position(pos.xtl, pos.ytl-1, pos.xbr, pos.ybr, pos.occluded, pos.outside);
-        me.draw(me.player.frame, pos);
-
-        me.recordposition();
-        me.notifyupdate();
-        eventlog("resizable", "Resize a box");
-    };
-    this.moveTLDown = function() {
-        var pos = me.pollposition();
-        pos = new Position(pos.xtl, pos.ytl+1, pos.xbr, pos.ybr, pos.occluded, pos.outside);
+        pos = new Position(pos.xtl, pos.ytl+(v||1), pos.xbr, pos.ybr+(v||1), pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
         me.recordposition();
@@ -767,36 +729,74 @@ function Track(player, color, position)
     };
 
 
-    this.moveBRLeft = function() {
+    this.moveTLLeft = function(v) {
         var pos = me.pollposition();
-        pos = new Position(pos.xtl, pos.ytl, pos.xbr-1, pos.ybr, pos.occluded, pos.outside);
+        pos = new Position(pos.xtl-(v||1), pos.ytl, pos.xbr, pos.ybr, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
     };
-    this.moveBRRight = function() {
+    this.moveTLRight = function(v) {
         var pos = me.pollposition();
-        pos = new Position(pos.xtl, pos.ytl, pos.xbr+1, pos.ybr, pos.occluded, pos.outside);
+        pos = new Position(pos.xtl+(v||1), pos.ytl, pos.xbr, pos.ybr, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
     };
-    this.moveBRUp = function() {
+    this.moveTLUp = function(v) {
         var pos = me.pollposition();
-        pos = new Position(pos.xtl, pos.ytl, pos.xbr, pos.ybr-1, pos.occluded, pos.outside);
+        pos = new Position(pos.xtl, pos.ytl-(v||1), pos.xbr, pos.ybr, pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
     };
-    this.moveBRDown = function() {
+    this.moveTLDown = function(v) {
         var pos = me.pollposition();
-        pos = new Position(pos.xtl, pos.ytl, pos.xbr, pos.ybr+1, pos.occluded, pos.outside);
+        pos = new Position(pos.xtl, pos.ytl+(v||1), pos.xbr, pos.ybr, pos.occluded, pos.outside);
+        me.draw(me.player.frame, pos);
+
+        me.recordposition();
+        me.notifyupdate();
+        eventlog("resizable", "Resize a box");
+    };
+
+
+    this.moveBRLeft = function(v) {
+        var pos = me.pollposition();
+        pos = new Position(pos.xtl, pos.ytl, pos.xbr-(v||1), pos.ybr, pos.occluded, pos.outside);
+        me.draw(me.player.frame, pos);
+
+        me.recordposition();
+        me.notifyupdate();
+        eventlog("resizable", "Resize a box");
+    };
+    this.moveBRRight = function(v) {
+        var pos = me.pollposition();
+        pos = new Position(pos.xtl, pos.ytl, pos.xbr+(v||1), pos.ybr, pos.occluded, pos.outside);
+        me.draw(me.player.frame, pos);
+
+        me.recordposition();
+        me.notifyupdate();
+        eventlog("resizable", "Resize a box");
+    };
+    this.moveBRUp = function(v) {
+        var pos = me.pollposition();
+        pos = new Position(pos.xtl, pos.ytl, pos.xbr, pos.ybr-(v||1), pos.occluded, pos.outside);
+        me.draw(me.player.frame, pos);
+
+        me.recordposition();
+        me.notifyupdate();
+        eventlog("resizable", "Resize a box");
+    };
+    this.moveBRDown = function(v) {
+        var pos = me.pollposition();
+        pos = new Position(pos.xtl, pos.ytl, pos.xbr, pos.ybr+(v||1), pos.occluded, pos.outside);
         me.draw(me.player.frame, pos);
 
         me.recordposition();

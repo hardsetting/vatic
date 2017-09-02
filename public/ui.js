@@ -1,4 +1,5 @@
 var ui_disabled = 0;
+var moveStep = 1;
 
 function ui_build(job)
 {
@@ -264,33 +265,33 @@ function ui_setupkeyboardshortcuts(job, player, objectui)
 
             if (e.shiftKey) {
                 if (keyCode == 37) {
-                    objectui.currentobject.track.moveTLLeft();
+                    objectui.currentobject.track.moveTLLeft(moveStep);
                 } else if (keyCode == 38) {
-                    objectui.currentobject.track.moveTLUp();
+                    objectui.currentobject.track.moveTLUp(moveStep);
                 } else if (keyCode == 39) {
-                    objectui.currentobject.track.moveTLRight();
+                    objectui.currentobject.track.moveTLRight(moveStep);
                 } else if (keyCode == 40) {
-                    objectui.currentobject.track.moveTLDown();
+                    objectui.currentobject.track.moveTLDown(moveStep);
                 }
             } else if (e.ctrlKey) {
                 if (keyCode == 37) {
-                    objectui.currentobject.track.moveBRLeft();
+                    objectui.currentobject.track.moveBRLeft(moveStep);
                 } else if (keyCode == 38) {
-                    objectui.currentobject.track.moveBRUp();
+                    objectui.currentobject.track.moveBRUp(moveStep);
                 } else if (keyCode == 39) {
-                    objectui.currentobject.track.moveBRRight();
+                    objectui.currentobject.track.moveBRRight(moveStep);
                 } else if (keyCode == 40) {
-                    objectui.currentobject.track.moveBRDown();
+                    objectui.currentobject.track.moveBRDown(moveStep);
                 }
             } else {
                if (keyCode == 37) {
-                    objectui.currentobject.track.moveLeft();
+                    objectui.currentobject.track.moveLeft(moveStep);
                 } else if (keyCode == 38) {
-                    objectui.currentobject.track.moveUp();
+                    objectui.currentobject.track.moveUp(moveStep);
                 } else if (keyCode == 39) {
-                    objectui.currentobject.track.moveRight();
+                    objectui.currentobject.track.moveRight(moveStep);
                 } else if (keyCode == 40) {
-                    objectui.currentobject.track.moveDown();
+                    objectui.currentobject.track.moveDown(moveStep);
                 }
             }
         }
@@ -309,7 +310,11 @@ function ui_setupkeyboardshortcuts(job, player, objectui)
 
         var keycode = e.keyCode ? e.keyCode : e.which;
         eventlog("keyboard", "Key press: " + keycode);
-        
+
+        if (keycode >= 49 && keycode <= 57) {
+            moveStep = keycode - 48;
+        }
+
         if (keycode == 32 || keycode == 112 || keycode == 116 || keycode == 98)
         {
             $("#playbutton").click();
