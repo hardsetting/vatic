@@ -694,9 +694,12 @@ function Track(player, color, position)
     this.moveLeft = function(v) {
         var pos = me.pollposition();
         pos = new Position(pos.xtl-(v||1), pos.ytl, pos.xbr-(v||1), pos.ybr, pos.occluded, pos.outside);
+        player.pause();
+        me.notifystartupdate();
+
         me.draw(me.player.frame, pos);
 
-	me.fixposition();
+	    me.fixposition();
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -704,9 +707,11 @@ function Track(player, color, position)
     this.moveRight = function(v) {
         var pos = me.pollposition();
         pos = new Position(pos.xtl+(v||1), pos.ytl, pos.xbr+(v||1), pos.ybr, pos.occluded, pos.outside);
+        player.pause();
+        me.notifystartupdate();
         me.draw(me.player.frame, pos);
 
-	me.fixposition();
+	    me.fixposition();
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -714,9 +719,11 @@ function Track(player, color, position)
     this.moveUp = function(v) {
         var pos = me.pollposition();
         pos = new Position(pos.xtl, pos.ytl-(v||1), pos.xbr, pos.ybr-(v||1), pos.occluded, pos.outside);
+        player.pause();
+        me.notifystartupdate();
         me.draw(me.player.frame, pos);
 
-	me.fixposition();
+	    me.fixposition();
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -724,9 +731,11 @@ function Track(player, color, position)
     this.moveDown = function(v) {
         var pos = me.pollposition();
         pos = new Position(pos.xtl, pos.ytl+(v||1), pos.xbr, pos.ybr+(v||1), pos.occluded, pos.outside);
+        player.pause();
+        me.notifystartupdate();
         me.draw(me.player.frame, pos);
 
-	me.fixposition()
+	    me.fixposition()
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -736,9 +745,11 @@ function Track(player, color, position)
     this.moveTLLeft = function(v) {
         var pos = me.pollposition();
         pos = new Position(pos.xtl-(v||1), pos.ytl, pos.xbr, pos.ybr, pos.occluded, pos.outside);
+        player.pause();
+        me.notifystartupdate();
         me.draw(me.player.frame, pos);
 
-	me.fixposition()
+	    me.fixposition()
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -746,9 +757,11 @@ function Track(player, color, position)
     this.moveTLRight = function(v) {
         var pos = me.pollposition();
         pos = new Position(pos.xtl+(v||1), pos.ytl, pos.xbr, pos.ybr, pos.occluded, pos.outside);
+        player.pause();
+        me.notifystartupdate();
         me.draw(me.player.frame, pos);
 
-	me.fixposition()
+	    me.fixposition()
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -756,9 +769,11 @@ function Track(player, color, position)
     this.moveTLUp = function(v) {
         var pos = me.pollposition();
         pos = new Position(pos.xtl, pos.ytl-(v||1), pos.xbr, pos.ybr, pos.occluded, pos.outside);
+        player.pause();
+        me.notifystartupdate();
         me.draw(me.player.frame, pos);
 
-	me.fixposition()
+	    me.fixposition()
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -766,9 +781,11 @@ function Track(player, color, position)
     this.moveTLDown = function(v) {
         var pos = me.pollposition();
         pos = new Position(pos.xtl, pos.ytl+(v||1), pos.xbr, pos.ybr, pos.occluded, pos.outside);
+        player.pause();
+        me.notifystartupdate();
         me.draw(me.player.frame, pos);
 
-	me.fixposition()
+	    me.fixposition()
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -778,9 +795,11 @@ function Track(player, color, position)
     this.moveBRLeft = function(v) {
         var pos = me.pollposition();
         pos = new Position(pos.xtl, pos.ytl, pos.xbr-(v||1), pos.ybr, pos.occluded, pos.outside);
+        player.pause();
+        me.notifystartupdate();
         me.draw(me.player.frame, pos);
 
-	me.fixposition()
+	    me.fixposition()
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -788,9 +807,11 @@ function Track(player, color, position)
     this.moveBRRight = function(v) {
         var pos = me.pollposition();
         pos = new Position(pos.xtl, pos.ytl, pos.xbr+(v||1), pos.ybr, pos.occluded, pos.outside);
+        player.pause();
+        me.notifystartupdate();
         me.draw(me.player.frame, pos);
 
-	me.fixposition()
+	    me.fixposition()
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -798,9 +819,11 @@ function Track(player, color, position)
     this.moveBRUp = function(v) {
         var pos = me.pollposition();
         pos = new Position(pos.xtl, pos.ytl, pos.xbr, pos.ybr-(v||1), pos.occluded, pos.outside);
+        player.pause();
+        me.notifystartupdate();
         me.draw(me.player.frame, pos);
 
-	me.fixposition()
+	    me.fixposition()
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
@@ -808,9 +831,11 @@ function Track(player, color, position)
     this.moveBRDown = function(v) {
         var pos = me.pollposition();
         pos = new Position(pos.xtl, pos.ytl, pos.xbr, pos.ybr+(v||1), pos.occluded, pos.outside);
+        player.pause();
+        me.notifystartupdate();
         me.draw(me.player.frame, pos);
 
-	me.fixposition()
+	    me.fixposition()
         me.recordposition();
         me.notifyupdate();
         eventlog("resizable", "Resize a box");
